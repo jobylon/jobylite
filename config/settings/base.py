@@ -42,9 +42,7 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres:///jobylite")
-}
+DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///jobylite")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -217,7 +215,7 @@ EMAIL_TIMEOUT = 5
 # ADMIN
 # ------------------------------------------------------------------------------
 # Django Admin URL.
-ADMIN_URL = "admin/"
+ADMIN_URL = "notiwca/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = [("""Jobylon""", "it@jobylon.com")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers

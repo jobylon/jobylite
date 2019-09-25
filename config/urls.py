@@ -5,6 +5,11 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+# Admin configuration
+admin.site.site_header = "Jobylite Admin"
+admin.site.site_title = "jobylite - admin"
+admin.site.index_title = "Welcome to jobylite admin"
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
