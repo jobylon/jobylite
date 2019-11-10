@@ -2,6 +2,10 @@ import pytest
 from django.conf import settings
 from django.test import RequestFactory
 
+from jobylite.core.models import Job
+from jobylite.core.models import JobContactDetails
+from jobylite.core.tests.factories import JobFactory
+from jobylite.core.tests.factories import JobContactDetailsFactory
 from jobylite.users.tests.factories import UserFactory
 
 
@@ -18,3 +22,13 @@ def user() -> settings.AUTH_USER_MODEL:
 @pytest.fixture
 def request_factory() -> RequestFactory:
     return RequestFactory()
+
+
+@pytest.fixture
+def job() -> Job:
+    return JobFactory()
+
+
+@pytest.fixture
+def job_contact_details() -> JobContactDetails:
+    return JobContactDetailsFactory()
