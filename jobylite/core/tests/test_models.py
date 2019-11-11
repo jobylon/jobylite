@@ -1,9 +1,21 @@
 import pytest
 
+from ..models import Application
 from ..models import Job
 from ..models import JobContactDetails
 
 pytestmark = pytest.mark.django_db
+
+
+def test_application_str(application: Application):
+    assert str(application) == f"{application.name}: {application.email}"
+
+
+def test_application_repr(application: Application):
+    assert (
+        repr(application)
+        == f"{application.__class__.__name__}({application.id}, {application.name})"
+    )
 
 
 def test_job_str(job: Job):
