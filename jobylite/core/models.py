@@ -47,3 +47,6 @@ class JobContactDetails(TimeStampedModel):
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.id}, {self.name}, {self.email})"
+
+    class Meta:
+        verbose_name_plural = "Job contact details"
