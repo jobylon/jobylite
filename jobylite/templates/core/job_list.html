@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            {% for job in jobs %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        {{ job.title }} - {{ job.dt_created }}
+                    </div>
+                </div>
+            {% empty %}
+                <p>There are no jobs!</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
