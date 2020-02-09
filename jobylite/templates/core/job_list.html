@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+
+{% load static i18n %}
+
 {% block content %}
     <div class="row">
         <div class="col-md-6 offset-md-3">
+            <h1>{% trans "My Jobs" %}</h1>
             {% for job in jobs %}
                 <div class="card mb-3">
                     <div class="card-body">
@@ -11,6 +15,7 @@
             {% empty %}
                 <p>There are no jobs!</p>
             {% endfor %}
+            <a href="{% url 'core:job-create' %} " class="btn btn-primary">Create a job</a>
         </div>
     </div>
 {% endblock %}

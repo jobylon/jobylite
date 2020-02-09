@@ -46,7 +46,14 @@
             {% if request.user.is_authenticated %}
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Settings
+                    {% trans "My Company" %}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'core:contact-details-create'%}">{% trans "Add a Hiring Manager" %}</a>
+                </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {% trans "Settings" %}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   {# URL provided by django-allauth/account/urls.py #}
