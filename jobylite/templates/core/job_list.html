@@ -10,12 +10,13 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         {{ job.title }} - {{ job.dt_created }}
+                        <a href="{% url 'core:job-detail' job.id %}" class="btn btn-info">{% trans "View" %}</a>
                     </div>
                 </div>
             {% empty %}
                 <p>There are no jobs!</p>
             {% endfor %}
-            <a href="{% url 'core:job-create' %} " class="btn btn-primary">Create a job</a>
+            <a href="{% url 'core:job-create' %}" class="btn btn-primary">{% trans "Create a job" %}</a>
         </div>
     </div>
 {% endblock %}

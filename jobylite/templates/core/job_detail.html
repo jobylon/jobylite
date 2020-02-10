@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>{{ job.title }}</h1>
+      <p>
+        {{ job.descr }}
+      </p>
+      <p>
+        {{ job.skills|default_if_none:"&nbsp;" }}
+      </p>
+      {% if job.contact_details %}
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ job.contact_details.name }}</h5>
+            <a href="#" class="card-link">{{ job.contact_details.email }}</a>
+            <a href="#" class="card-link">{{ job.contact_details.phone|default_if_none:"&nbsp;" }}</a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

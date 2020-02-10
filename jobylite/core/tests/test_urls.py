@@ -1,6 +1,3 @@
-import pytest
-
-from django.conf import settings
 from django.urls import resolve
 from django.urls import reverse
 
@@ -13,6 +10,12 @@ def test_index():
 def test_job_create():
     assert reverse("core:job-create") == f"/jobs/create/"
     assert resolve(f"/jobs/create/").view_name == "core:job-create"
+
+
+def test_job_detail():
+    assert reverse("core:job-detail", kwargs={"pk": 1}) == f"/jobs/1/"
+    assert resolve(f"/jobs/1/").view_name == "core:job-detail"
+    assert resolve(f"/jobs/1/").kwargs == {"pk": 1}
 
 
 def test_contact_details_create():
